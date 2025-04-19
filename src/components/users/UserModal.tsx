@@ -36,7 +36,7 @@ const UserModal: FC<Props> = ({ user, close }) => {
   };
 
   return (
-    <Modal confirmText={user?.id ? 'Update' : 'Create'} onConfirm={onConfirm} close={close}
+    <Modal disableConfirm={!userData.email || !userData.name} confirmText={user?.id ? 'Update' : 'Create'} onConfirm={onConfirm} close={close}
            title={user?.id ? 'Edit user' : 'Create user'}>
       <div className="p-2 w-full">
         <Input placeholder="Name" className="w-full mb-2" label={'Name'} value={userData.name!}
